@@ -20,31 +20,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en"  data-theme="light">
-      <body
-        className={` antialiased bg-[#F8FAFC]`}
-      >
+    <html lang="en" data-theme="light">
+      <body className={` antialiased bg-[#F8FAFC]`}>
+        <div className="max-w-[2040px] mx-auto ">
+          <div className="grid grid-cols-6 gap-8">
+            <section className="cols-span-1">
+              <Sidebar />
+            </section>
 
-       <div className="max-w-[2040px] mx-auto ">
-
-      <div className="grid grid-cols-6 gap-8">
-
-          <section className="cols-span-1">
-  <Sidebar/>
-
-        </section>
-
-        <section className="col-span-5">
-
-   <TopBar/>
-     {children}
-        </section>
-      </div>
-
-      
-      
-      
-       </div>
+            <section className="col-span-5">
+              <TopBar />
+              {children}
+            </section>
+          </div>
+        </div>
       </body>
     </html>
   );
