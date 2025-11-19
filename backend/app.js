@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser';
 import connectDB from './src/config/db.js';
 import cors from 'cors';
+import routes from './src/route/index.js'
 
 
 const app = express()
@@ -24,6 +25,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use("/api", routes)
 
 await connectDB();
 app.use((err, req, res, next) => {
