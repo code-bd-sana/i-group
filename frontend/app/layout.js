@@ -43,6 +43,21 @@ export default function RootLayout({ children }) {
         <div className="max-w-[2040px] mx-auto">
           <div className="flex gap-8">
             {/* Sidebar Section */}
+     {/* Sidebar Section */}
+<section
+  className={`
+    fixed md:relative 
+    top-0 left-0 h-screen
+    z-50 md:z-auto 
+    transform transition-transform duration-300 ease-in-out
+    ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+  `}
+>
+  <div className="min-w-60 h-full">
+    <Sidebar />
+  </div>
+</section>
+
             <section
               className={`
     fixed md:relative z-50 md:z-auto 
@@ -64,6 +79,8 @@ export default function RootLayout({ children }) {
             )}
 
             {/* Main Content Section */}
+            <section className="flex-1 px-5  min-h-screen md:min-h-0">
+              <TopBar 
             <section className="flex-1 min-h-screen md:min-h-0">
               <TopBar
                 onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
