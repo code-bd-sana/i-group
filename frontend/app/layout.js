@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <body className={` antialiased bg-[#F8FAFC]`}>
         <div className="max-w-[2040px] mx-auto ">
           <div className="grid grid-cols-6 gap-8">
