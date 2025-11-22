@@ -39,13 +39,13 @@ export default function RootLayout({ children }) {
           <div
             className={`
               fixed z-50 
-              md:relative md:z-auto
+              lg:relative lg:z-auto
               h-full w-60
               transform transition-transform duration-300
               ${
                 sidebarOpen
                   ? "translate-x-0"
-                  : "-translate-x-full md:translate-x-0"
+                  : "-translate-x-full lg:translate-x-0"
               }
             `}
           >
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
           {/* ====== Transparent overlay for mobile ====== */}
           {sidebarOpen && (
             <div
-              className="fixed inset-0 bg-transparent z-40 md:hidden"
+              className="fixed inset-0 bg-transparent z-40 lg:hidden"
               onClick={() => setSidebarOpen(false)}
             />
           )}
