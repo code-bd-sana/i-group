@@ -15,15 +15,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "I-GROUP",
-//   description: "",
-// };
-
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Close sidebar when window is resized to desktop size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -40,37 +34,44 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]`}
       >
-        <div className="max-w-[2040px] mx-auto">
-          <div className="flex gap-8">
-            {/* Sidebar Section */}
-            <section
-              className={`
-    fixed md:relative z-50 md:z-auto 
-    transform transition-transform duration-300 ease-in-out
-    ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
-  `}
-            >
-              <div className="min-w-60">
-                <Sidebar />
-              </div>
-            </section>
+        <div className="w-full h-screen flex overflow-hidden">
 
-            {/* Overlay for mobile when sidebar is open */}
-            {sidebarOpen && (
-              <div
-                className="fixed inset-0 duration-300 ease-in-out  bg-opacity-50 z-40 md:hidden"
-                onClick={() => setSidebarOpen(false)}
-              ></div>
-            )}
+          {/* ================= SIDEBAR (FIXED) ================= */}
+          <div
+            className={`
+              fixed z-50 
+              md:relative md:z-auto
+              h-full w-60
+              transform transition-transform duration-300
+              ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+            `}
+          >
+            <Sidebar />
+          </div>
 
-            {/* Main Content Section */}
-            <section className="flex-1 min-h-screen md:min-h-0">
+          {/* ====== Transparent overlay for mobile ====== */}
+          {sidebarOpen && (
+            <div
+              className="fixed inset-0 bg-transparent z-40 md:hidden"
+              onClick={() => setSidebarOpen(false)}
+            />
+          )}
+
+          {/* ================= MAIN CONTENT ================= */}
+          <div className="flex-1 h-full flex flex-col overflow-hidden">
+
+            {/* Topbar (fixed) */}
+            <div className="sticky ml-5 top-0 z-30 bg-[#F8FAFC]">
               <TopBar
                 onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
                 sidebarOpen={sidebarOpen}
               />
+            </div>
+
+            {/* Scrollable page content */}
+            <main className="flex-1 overflow-y-auto px-6 py-4">
               {children}
-            </section>
+            </main>
           </div>
         </div>
       </body>

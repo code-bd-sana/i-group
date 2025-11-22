@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   FiChevronLeft,
   FiMessageCircle,
@@ -15,9 +16,11 @@ export default function AgentDetails() {
         {/* TOP BAR */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <button className="w-9 h-9 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+         <Link href="/agents">
+               <button className="w-9 h-9 rounded-full bg-white shadow-sm border border-gray-200 flex items-center justify-center hover:bg-gray-50">
               <FiChevronLeft className="text-gray-600 text-lg" />
             </button>
+         </Link>
 
             <div className="flex justify-center items-center gap-2">
               <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-100">
