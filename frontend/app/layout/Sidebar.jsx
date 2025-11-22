@@ -32,7 +32,7 @@ export default function Sidebar() {
     { name: "Settings", icon: <FiSettings />, path: "/settings" },
     { name: "Logs", icon: <PiNotebook />, path: "/logs" },
     { name: "Profile", icon: <RxAvatar />, path: "/profile" },
-    { name: "Help / Contact", icon: <CiCircleQuestion />, path: "/help" },
+    // { name: "Help / Contact", icon: <CiCircleQuestion />, path: "/help" },
     { name: "Logout", icon: <FiLogOut />, path: "/logout" },
   ];
 
