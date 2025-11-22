@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopBar from "./layout/TopBar";
@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 
 export default function RootLayout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  
+
   // Close sidebar when window is resized to desktop size
   useEffect(() => {
     const handleResize = () => {
@@ -30,33 +30,34 @@ export default function RootLayout({ children }) {
         setSidebarOpen(false);
       }
     };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]`}
+      >
         <div className="max-w-[2040px] mx-auto">
           <div className="flex gap-8">
             {/* Sidebar Section */}
-         <section
-  className={`
+            <section
+              className={`
     fixed md:relative z-50 md:z-auto 
     transform transition-transform duration-300 ease-in-out
     ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
   `}
->
-  <div className="min-w-60">
-    <Sidebar />
-  </div>
-</section>
-
+            >
+              <div className="min-w-60">
+                <Sidebar />
+              </div>
+            </section>
 
             {/* Overlay for mobile when sidebar is open */}
             {sidebarOpen && (
-              <div 
+              <div
                 className="fixed inset-0 duration-300 ease-in-out  bg-opacity-50 z-40 md:hidden"
                 onClick={() => setSidebarOpen(false)}
               ></div>
@@ -64,7 +65,7 @@ export default function RootLayout({ children }) {
 
             {/* Main Content Section */}
             <section className="flex-1 min-h-screen md:min-h-0">
-              <TopBar 
+              <TopBar
                 onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
                 sidebarOpen={sidebarOpen}
               />
