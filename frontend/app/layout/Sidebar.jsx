@@ -16,6 +16,7 @@ import { FiSettings, FiLogOut } from "react-icons/fi";
 import { PiNotebook } from "react-icons/pi";
 import { RxAvatar } from "react-icons/rx";
 import { CiCircleQuestion } from "react-icons/ci";
+import Link from "next/link";
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -57,6 +58,8 @@ export default function Sidebar() {
           const active = isActivePath(item.path);
 
           return (
+         <Link href={item.path}>
+         
             <div
               key={index}
               className={`flex items-center gap-3 px-3 mt-3 py-3 rounded-lg cursor-pointer text-[15px]
@@ -75,6 +78,7 @@ export default function Sidebar() {
               </span>
               <span>{item.name}</span>
             </div>
+         </Link>
           );
         })}
       </div>

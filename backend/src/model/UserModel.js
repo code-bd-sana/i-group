@@ -7,6 +7,10 @@ const userSchema = new Schema(
       required: [true, "Email is required"],
       unique: true,
     },
+    internalId: {
+      type: String,
+      unique: true,
+    },
     password: {
       type: String,
       required: [true, "Password is required"],
@@ -14,7 +18,7 @@ const userSchema = new Schema(
     name: String,
     role: {
       type: String,
-      enum: ["user", "agent", "sub-agency", "admin"],
+      enum: [ "agent", "sub-agent", "admin", "sub-admin"],
       default: "user",
     },
     phone: Number,
