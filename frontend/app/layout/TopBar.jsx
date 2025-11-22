@@ -9,7 +9,7 @@ export default function TopBar({ onMenuToggle, sidebarOpen }) {
       <div className="flex items-center gap-4">
         {/* Hamburger Menu Button for Mobile */}
         <button 
-          className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+          className="lg:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
           onClick={onMenuToggle}
           aria-label="Toggle menu"
         >
