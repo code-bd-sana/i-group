@@ -1,16 +1,13 @@
-import Activities from "../components/dashboard/Activities";
-import DashboardChart from "../components/dashboard/DashboardChart";
-import DashboardHeader from "../components/dashboard/DashboardHeader";
-import RecentUploads from "../components/dashboard/RecentUploads.jsx";
-
-//hello buff
-
+import Activities from "@/components/Dashboard/Activities";
+import DashboardChart from "@/components/Dashboard/DashboardChart";
+import DashboardHeader from "@/components/Dashboard/DashboardHeader";
+import RecentUploads from "@/components/Dashboard/RecentUploads";
 
 export default function Page() {
   return (
     <div>
       <DashboardHeader />
-      <DashboardChart/>
+      <DashboardChart />
       <RecentUploads />
       <Activities />
     </div>
