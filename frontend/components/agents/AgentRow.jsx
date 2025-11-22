@@ -64,7 +64,7 @@ export default function AgentRow({ data }) {
 
       {/* Actions */}
       <td className="py-7 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm">
-        <Link href="/agents/agents-details" className="text-blue-600 hover:underline">Edit</Link>
+        <Link href="/agents/agent-details" className="text-blue-600 hover:underline">Edit</Link>
         <button className="text-red-500 hover:underline">Delete</button>
       </td>
     </tr>
