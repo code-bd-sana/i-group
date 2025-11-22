@@ -26,7 +26,7 @@ export default function Sidebar() {
     { name: "Agents / Accounts", icon: <FaRegUserCircle />, path: "/agents" },
     { name: "Statements", icon: <HiOutlineDocumentText />, path: "/statements" },
     { name: "Payments", icon: <RiWallet3Line />, path: "/payments" },
-    { name: "Bonus Level", icon: <LuGift />, path: "/bonus" },
+    { name: "Bonus Level", icon: <LuGift />, path: "/bonous" },
     { name: "Carriers", icon: <HiOutlineBuildingOffice2 />, path: "/carriers" },
     { name: "Report Center", icon: <MdOutlineBarChart />, path: "/reports" },
     { name: "Settings", icon: <FiSettings />, path: "/settings" },
