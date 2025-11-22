@@ -1,15 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AgentRow({ data }) {
   return (
-    <tr className="border-b last:border-b-0 text-sm">
-      
-      {/* Agent Name + Avatar + ID (or only name for sub-agents) */}
+    <tr className="border-b last:border-b-0 border-gray-200 text-sm">
+      {/* Agent Name + Avatar + ID */}
       <td className="py-4">
-        <div className="flex items-center gap-3">
-
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
           {/* Avatar */}
           {data.avatar ? (
             <Image
@@ -25,29 +24,29 @@ export default function AgentRow({ data }) {
             </div>
           )}
 
-          <div>
+          <div className="flex flex-col">
             <p className="font-medium">{data.name}</p>
-            {data.id ? (
-              <p className="text-xs text-gray-500">{data.id}</p>
-            ) : null}
+            {data.id && <p className="text-xs text-gray-500">{data.id}</p>}
           </div>
         </div>
       </td>
 
-      {/* Email + phone */}
-      <td>
-        <div>
-          <p>{data.email}</p>
-          {data.phone ? (
-            <p className="text-xs text-gray-500">{data.phone}</p>
-          ) : null}
+      {/* Email + Phone */}
+      <td className="py-4">
+        <div className="flex flex-col">
+          <p className="truncate max-w-[120px] sm:max-w-none">{data.email}</p>
+          {data.phone && (
+            <p className="text-xs text-gray-500 truncate max-w-[120px] sm:max-w-none">
+              {data.phone}
+            </p>
+          )}
         </div>
       </td>
 
       {/* Status */}
-      <td>
+      <td className="py-4">
         <span
-          className={`px-3 py-1 text-xs rounded-full ${
+          className={`px-3 py-1 text-xs rounded-full whitespace-nowrap ${
             data.status === "Active"
               ? "bg-green-50 text-green-600 border border-green-300"
               : "bg-red-50 text-red-600 border border-red-300"
@@ -58,14 +57,14 @@ export default function AgentRow({ data }) {
       </td>
 
       {/* Role */}
-      <td className="text-gray-700">{data.role}</td>
+      <td className="py-4 text-gray-700">{data.role}</td>
 
       {/* Created Date */}
-      <td className="text-gray-700">{data.date}</td>
+      <td className="py-4 text-gray-700">{data.date}</td>
 
       {/* Actions */}
-      <td className="flex items-center gap-3 text-sm">
-        <button className="text-blue-600 hover:underline">Edit</button>
+      <td className="py-7 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm">
+        <Link href="/agents/agents-details" className="text-blue-600 hover:underline">Edit</Link>
         <button className="text-red-500 hover:underline">Delete</button>
       </td>
     </tr>
