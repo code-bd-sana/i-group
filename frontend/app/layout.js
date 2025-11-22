@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]`}
       >
@@ -64,7 +64,7 @@ export default function RootLayout({ children }) {
             )}
 
             {/* Main Content Section */}
-            <section className="flex-1 border min-h-screen px-5 md:min-h-0">
+            <section className="flex-1 min-h-screen md:min-h-0">
               <TopBar
                 onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
                 sidebarOpen={sidebarOpen}
