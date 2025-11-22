@@ -1,14 +1,30 @@
 import React from "react";
 import { FiChevronDown } from "react-icons/fi";
 
-export default function TopBar() {
+export default function TopBar({ onMenuToggle, sidebarOpen }) {
   return (
     <div className="w-full bg-[#FFFFFF] shadow-[0px_4px_12px_0px_#0000001A] rounded-xl px-6 py-4 flex items-center justify-between">
       
-      {/* Left - Title */}
-      <h2 className="text-[#000000] text-2xl font-semibold">
-        Dashboard
-      </h2>
+      {/* Left Side - Hamburger Menu + Title */}
+      <div className="flex items-center gap-4">
+        {/* Hamburger Menu Button for Mobile */}
+        <button 
+          className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+          onClick={onMenuToggle}
+          aria-label="Toggle menu"
+        >
+          <div className="w-6 h-6 flex flex-col justify-center space-y-1">
+            <span className={`block h-0.5 w-6 bg-gray-600 transition-all ${sidebarOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-gray-600 transition-all ${sidebarOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-0.5 w-6 bg-gray-600 transition-all ${sidebarOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          </div>
+        </button>
+        
+        {/* Title */}
+        <h2 className="text-[#000000] text-2xl font-semibold">
+          Dashboard
+        </h2>
+      </div>
 
       {/* Right - Profile */}
       <div className="flex items-center gap-3">
@@ -21,7 +37,7 @@ export default function TopBar() {
         />
 
         {/* Name + Role */}
-        <div className="flex flex-col leading-tight">
+        <div className="hidden sm:flex flex-col leading-tight">
           <span className="text-sm font-semibold text-[#000000]">
             Alamin Khan
           </span>

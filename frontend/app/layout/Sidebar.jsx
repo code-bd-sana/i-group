@@ -40,6 +40,8 @@ export default function Sidebar() {
 
   return (
     <div className="bg-white border-r border-[#E2E8F0] fixed  top-0 h-screen w-60 flex flex-col">
+
+      
       
       {/* Logo Section (Not scrollable) */}
       <div className="flex justify-center py-4">
