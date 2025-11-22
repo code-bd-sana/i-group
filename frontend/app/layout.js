@@ -32,10 +32,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#F8FAFC]`}
       >
         <div className="w-full h-screen flex overflow-hidden">
-
           {/* ================= SIDEBAR (FIXED) ================= */}
           <div
             className={`
@@ -43,7 +42,11 @@ export default function RootLayout({ children }) {
               md:relative md:z-auto
               h-full w-60
               transform transition-transform duration-300
-              ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+              ${
+                sidebarOpen
+                  ? "translate-x-0"
+                  : "-translate-x-full md:translate-x-0"
+              }
             `}
           >
             <Sidebar />
@@ -59,7 +62,6 @@ export default function RootLayout({ children }) {
 
           {/* ================= MAIN CONTENT ================= */}
           <div className="flex-1 h-full flex flex-col overflow-hidden">
-
             {/* Topbar (fixed) */}
             <div className="sticky ml-5 top-0 z-30 bg-[#F8FAFC]">
               <TopBar
@@ -69,9 +71,7 @@ export default function RootLayout({ children }) {
             </div>
 
             {/* Scrollable page content */}
-            <main className="flex-1 overflow-y-auto px-6 py-4">
-              {children}
-            </main>
+            <main className="flex-1 overflow-y-auto px-6 py-4">{children}</main>
           </div>
         </div>
       </body>
