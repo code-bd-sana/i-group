@@ -288,7 +288,7 @@ export default function PaymentsPage() {
         </div>
 
         {/* TABLE - Responsive */}
-        <div className="mt-4 md:mt-8 overflow-x-scroll max-w-[35vh] mx-auto sm:max-w-full ">
+        <div className="mt-4 md:mt-8 overflow-x-scroll  mx-auto ">
           <table className="text-sm w-full md:text-[15px] shadow-lg rounded-lg overflow-hidden bg-white ">
             <thead>
               <tr className="border-b bg-[#F1F5F9] border-gray-200 text-left text-gray-600">
