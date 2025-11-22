@@ -3,7 +3,7 @@ import { FiChevronDown } from "react-icons/fi";
 
 export default function TopBar({ onMenuToggle, sidebarOpen }) {
   return (
-    <div className="w-full bg-[#FFFFFF] shadow-[0px_4px_12px_0px_#0000001A] rounded-xl px-6 py-4 flex items-center justify-between">
+    <div className="w-full bg-[#FFFFFF]  top-0 left-0 shadow-[0px_4px_12px_0px_#0000001A] rounded-xl px-6 py-4 flex items-center justify-between">
       
       {/* Left Side - Hamburger Menu + Title */}
       <div className="flex items-center gap-4">
