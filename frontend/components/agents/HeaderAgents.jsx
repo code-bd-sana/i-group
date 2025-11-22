@@ -4,16 +4,16 @@ import { FiSearch } from "react-icons/fi";
 
 export default function HeaderAgents() {
   return (
-    <div>
-      <h2 className="text-xl font-semibold">Agents / Accounts</h2>
-      <p className="text-sm text-gray-500 mb-4">
+    <div className="py-10">
+      <h2 className="text-2xl font-semibold">Agents / Accounts</h2>
+      <p className="text-sm text-gray-500 my-2">
         Manage all agents and sub-agencies
       </p>
 
-      <div className="bg-white border rounded-xl p-4 flex flex-wrap gap-4 items-center">
+      <div className="bg-white    rounded-xl p-4 flex flex-wrap gap-4 items-center">
         
         {/* Search */}
-        <div className="flex items-center border rounded-lg px-4 py-2 bg-white w-72">
+        <div className="flex items-center    rounded-lg px-4 py-2 bg-white w-72">
           <FiSearch className="text-gray-500 text-lg" />
           <input
             type="text"
@@ -23,7 +23,7 @@ export default function HeaderAgents() {
         </div>
 
         {/* Status dropdown */}
-        <select className="border rounded-lg px-4 py-2 text-sm w-40">
+        <select className="   rounded-lg px-4 py-2 text-sm w-40">
           <option>All Status</option>
           <option>Active</option>
           <option>Inactive</option>

@@ -29,10 +29,10 @@ export default function AgentsTable() {
   ];
 
   return (
-    <div className="bg-white rounded-xl border shadow-sm p-6">
+    <div className="bg-white rounded-xl shadow-sm p-6 my-10">
       <table className="w-full text-left">
         <thead>
-          <tr className="text-xs text-gray-500 border-b">
+          <tr className="text-xs text-gray-500">
             <th className="py-2">AGENT</th>
             <th className="py-2">EMAIL</th>
             <th className="py-2">STATUS</th>
