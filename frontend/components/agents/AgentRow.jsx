@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AgentRow({ data }) {
   return (
@@ -62,8 +63,8 @@ export default function AgentRow({ data }) {
       <td className="py-4 text-gray-700">{data.date}</td>
 
       {/* Actions */}
-      <td className="py-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm">
-        <button className="text-blue-600 hover:underline">Edit</button>
+      <td className="py-7 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 text-sm">
+        <Link href="/agents/agent-details" className="text-blue-600 hover:underline">Edit</Link>
         <button className="text-red-500 hover:underline">Delete</button>
       </td>
     </tr>

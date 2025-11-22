@@ -26,7 +26,7 @@ export default function Sidebar() {
     { name: "Agents / Accounts", icon: <FaRegUserCircle />, path: "/agents" },
     { name: "Statements", icon: <HiOutlineDocumentText />, path: "/statements" },
     { name: "Payments", icon: <RiWallet3Line />, path: "/payments" },
-    { name: "Bonus Level", icon: <LuGift />, path: "/bonus-lavel" },
+    { name: "Bonus Level", icon: <LuGift />, path: "/bonous" },
     { name: "Carriers", icon: <HiOutlineBuildingOffice2 />, path: "/carriers" },
     { name: "Report Center", icon: <MdOutlineBarChart />, path: "/reports" },
     { name: "Settings", icon: <FiSettings />, path: "/settings" },
@@ -36,14 +36,16 @@ export default function Sidebar() {
     { name: "Logout", icon: <FiLogOut />, path: "/logout" },
   ];
 
-  const isActivePath = (path) => pathname.startsWith(path);
+  /** ⭐ Exact + sub-route match logic */
+  const isActivePath = (itemPath) => {
+    if (itemPath === "/") return pathname === "/";
+
+    return pathname === itemPath || pathname.startsWith(itemPath + "/");
+  };
 
   return (
-    <div className="bg-white border-r border-[#E2E8F0] fixed  top-0 h-screen w-60 flex flex-col">
-
-      
-      
-      {/* Logo Section (Not scrollable) */}
+    <div className="bg-white border-r border-[#E2E8F0] fixed top-0 h-screen w-60 flex flex-col">
+      {/* Logo */}
       <div className="flex justify-center py-4">
         <Image
           src={logo}
@@ -54,33 +56,31 @@ export default function Sidebar() {
 
       <div className="border-b border-[#E2E8F0] w-[80%] mx-auto"></div>
 
-      {/* Scrollable Menu Section */}
+      {/* Menu */}
       <div className="flex-1 overflow-y-auto mt-2 px-3 pb-4 space-y-1">
         {menuItems.map((item, index) => {
           const active = isActivePath(item.path);
 
           return (
-         <Link href={item.path}>
-         
-            <div
-              key={index}
-              className={`flex items-center gap-3 px-3 mt-3 py-3 rounded-lg cursor-pointer text-[15px]
-              ${
-                active
-                  ? "bg-[#F1F6FF] text-[#2563EB] border-l-4 border-[#2199E8] font-medium"
-                  : "bg-[#F8FAFC] hover:bg-gray-100 text-[#475569]"
-              }`}
-            >
-              <span
-                className={`text-[20px] ${
-                  active ? "text-[#2563EB]" : "text-gray-500"
-                }`}
+            <Link href={item.path} key={index}>
+              <div
+                className={`flex items-center gap-3 px-3 mt-3 py-3 rounded-lg cursor-pointer text-[15px]
+                  ${
+                    active
+                      ? "bg-[#F1F6FF] text-[#2563EB] border-l-4 border-[#2199E8] font-medium"
+                      : "bg-[#F8FAFC] hover:bg-gray-100 text-[#475569]"
+                  }`}
               >
-                {item.icon}
-              </span>
-              <span>{item.name}</span>
-            </div>
-         </Link>
+                <span
+                  className={`text-[20px] ${
+                    active ? "text-[#2563EB]" : "text-gray-500"
+                  }`}
+                >
+                  {item.icon}
+                </span>
+                <span>{item.name}</span>
+              </div>
+            </Link>
           );
         })}
       </div>
