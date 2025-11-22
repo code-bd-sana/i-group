@@ -14,7 +14,7 @@ export default function AgentsTable() {
       status: "Active",
       role: "Agent",
       date: "Jan 15, 2025",
-      avatar: "/avatars/donna.png",
+      avatar: "/agents/agent.png",
     },
     {
       name: "Jane Smith",
@@ -24,8 +24,28 @@ export default function AgentsTable() {
       status: "Inactive",
       role: "Sub-Agency",
       date: "Jan 15, 2025",
-      avatar: "/avatars/jane.png",
+      avatar: "/agents/agent.png",
     },
+    {
+      name: "Jane Smith",
+      id: "AG003",
+      email: "jane@jgroup.com",
+      phone: "+1 555-432-2299",
+      status: "Inactive",
+      role: "Sub-Agency",
+      date: "Jan 15, 2025",
+      avatar: "/agents/agent.png",
+    },
+    {
+      name: "Jane Smith",
+      id: "AG003",
+      email: "jane@jgroup.com",
+      phone: "+1 555-432-2299",
+      status: "Inactive",
+      role: "Sub-Agency",
+      date: "Jan 15, 2025",
+      avatar: "/agents/agent.png",
+    }
   ];
 
   return (
